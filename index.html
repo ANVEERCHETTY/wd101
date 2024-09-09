@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #000; /* Set the background to black */
+      color: #fff; /* Set all text to white */
+    }
+
+    h2, h3 {
+      color: #fff; /* White color for the heading */
+    }
+
+    .form-label {
+      color: #fff; /* White labels for form elements */
+    }
+
+    .form-input {
+      background-color: #1a1a1a; /* Dark background for input fields */
+      color: #fff; /* White text inside input fields */
+      border: 1px solid #555; /* Light gray border */
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #00ffcc; /* Neon green border on focus */
+      box-shadow: 0 0 5px #00ffcc;
+    }
+
+    .submit-btn {
+      background-color: #00ffcc; /* Neon green for submit button */
+      color: #000; /* Black text for contrast */
+    }
+
+    .submit-btn:hover {
+      background-color: #00e6b8; /* Slightly darker on hover */
+    }
+
+    .shadow-lg {
+      box-shadow: 0 0 15px #00ffcc; /* Neon glow effect */
+    }
+
+    .entry-box {
+      background-color: #1a1a1a; /* Dark background for entry box */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00ffcc; /* Neon glow effect */
+      color: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #00ffcc;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      color: #fff;
+    }
+
+    th {
+      background-color: #333;
+    }
+
+    td {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <h2 class="text-center text-2xl font-bold leading-9 tracking-tight">Registration Form</h2>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-black shadow-lg rounded-lg p-6">
+        <form id="user_form" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium leading-6 form-label">Name</label>
+            <div class="mt-2">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="block w-full rounded-md form-input py-1.5 text-sm sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium leading-6 form-label">Email address</label>
+            <div class="mt-2">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="block w-full rounded-md form-input py-1.5 text-sm sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="password" class="block text-sm font-medium leading-6 form-label">Password</label>
+            <div class="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md form-input py-1.5 text-sm sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="dob" class="block text-sm font-medium leading-6 form-label">Date of Birth</label>
+            <div class="mt-2">
+              <input
+                id="dob"
+                name="dob"
+                type="date"
+                required
+                class="block w-full rounded-md form-input py-1.5 text-sm sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="accept" class="block text-sm font-medium leading-6 form-label">Accept Terms & Conditions</label>
+            <div class="mt-2">
+              <input
+                id="accept"
+                name="accept"
+                type="checkbox"
+                required
+                class="rounded-md shadow-sm px-3 py-2 bg-gray-200 focus:outline-none form-input"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="w-full rounded-md submit-btn px-4 py-2 text-sm font-semibold shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Entry Box Section -->
+  <div class="mt-10 px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <h3 class="text-center text-xl font-bold leading-9 tracking-tight">Entry Box</h3>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="entry-box">
+        <div id="user-entries"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
